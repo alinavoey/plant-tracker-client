@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Plant Watering Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,32 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+      <h3>Sign Up</h3>
+        <form id="sign-up-form">
+          <input name="credentials[email]" type="email" placeholder="Enter your email" required> 
+          <input name="credentials[password]" type="password" placeholder="Enter a password" required> 
+          <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required> 
+          <button type="submit">Sign Up</button> 
+        </form>
+
+      <h3>Sign In</h3>
+        <form id="sign-in-form">
+          <input name="credentials[email]" type="email" placeholder="email" required> 
+          <input name="credentials[password]" type="password" placeholder="password" required>
+          <button type="submit">Sign In</button>
+        </form>
+
+      <h3>Change Password</h3>
+        <form id="change-pw-form">
+          <input name="passwords[old]" type="password" placeholder="old password" required>
+          <input name="passwords[new]" type="password" placeholder="new password" required> 
+          <button type="submit">Change Password</button> 
+        </form>
+      
+        <button id="sign-out-btn">Sign Out</button>
+
+      <section id="auth-display"></section>
     </body>
 </html>
