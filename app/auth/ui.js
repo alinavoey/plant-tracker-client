@@ -14,15 +14,15 @@ const onSignInSuccess = function(response) {
     $('form').trigger('reset')
 
     store.user = response.user
-
-    $('#sign-in-display').hide()
-    $('#sign-up-display').hide()
-    $('#change-pw-display').show()
+    $('#home-page').hide()
+    $('#home-btn').show()
+    $('#change-pw-btn').show()
     $('#sign-out-btn').show()
 
     $('#plant-btns').html(`
-        <button id="create-plant" type="click">Add New Plant</button>
-        <button id="view-plants" type="click">My Plants</button>
+        <img src="../../public/plant-pot-resized.png" width="400" height="400"> <br>
+        <button id="create-plant" type="click">Add New Plant</button> <br>
+        <button id="view-plants" type="click">My Plants</button> <br>
     `)
 }
 
