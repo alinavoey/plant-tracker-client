@@ -1,5 +1,49 @@
 @import '~bootstrap/scss/bootstrap';
 
-#change-pw-display, #sign-out-btn, #add-plant-display {
+#change-pw-display, #home-btn, #change-pw-btn, #sign-out-btn, #add-plant-display, #update-plant-display, #sign-up-display, #sign-in-btn {
     display: none;
+}
+
+body {
+    background-color: #8db38b;
+}
+
+#home-page, #main-content {
+    margin: 0 23%;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 5% 0
+}
+
+#home-page h3 {
+    margin: 10px 0;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+#home-page form input {
+    width: 35%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    letter-spacing: 2px;
+}
+
+#home-page button {
+    width: 35%;
+    margin: 5px 0;
+    padding: 10px 30px;
+    background-color: #f8667a;
+    border: none;
+}
+
+#plant-btns button {
+    width: 35%;
+    margin: 10px 0;
+    padding: 30px 30px;
+    background-color: #b185db;
+    border: none;
+    color: white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
