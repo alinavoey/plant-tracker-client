@@ -20,7 +20,7 @@ const onSignInSuccess = function(response) {
     $('#sign-out-btn').show()
 
     $('#plant-btns').html(`
-        <img src="../../public/plant-pot-resized.png" width="400" height="400"> <br>
+        <img src="./public/pot-resized.png" width="400" height="400"> <br>
         <button id="create-plant" type="click">Add New Plant</button> <br>
         <button id="view-plants" type="click">My Plants</button> <br>
     `)
