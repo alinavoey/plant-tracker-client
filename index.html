@@ -53,11 +53,12 @@
           </form>
         </div>
         
-        <button id="home-btn">Home</button>
-        <button id="change-pw-btn">Change Password</button>
-        <button id="sign-out-btn">Sign Out</button>
+        <div id="navigation">
+          <button id="home-btn">Home</button>
+          <button id="change-pw-btn">Change Password</button>
+          <button id="sign-out-btn">Sign Out</button>
+        </div>
 
-        
           <section id="auth-display"></section>
 
           <div id="plant-btns"></div>
@@ -66,48 +67,49 @@
             <h3>Add New Plant</h3> <hr>
             <form id="add-plant-form">
 
-            <label for="plant[species]">Plant Species:</label> <br>
-            <input name="plant[species]" type="text" placeholder="Enter your plant" required> <br>
+            <label class="plant-label" for="plant[species]">Plant Species:</label> <br>
+            <input class="form-input-box" name="plant[species]" type="text" placeholder="Enter your plant" required> <br>
 
-            <label for="plant[lightLevel]">Light Level:</label> <br>
+            <label class="plant-label" for="plant[lightLevel]">Light Level:</label> <br>
             <input name="plant[lightLevel]" type="radio" value="low" required> 
-            <label for="low">Low</label><br>
+            <label for="low">Low</label>
 
             <input name="plant[lightLevel]" type="radio" value="indirect"> 
-            <label for="indirect">Indirect</label><br>
+            <label for="indirect">Indirect</label>
 
             <input name="plant[lightLevel]" type="radio" value="direct"> 
             <label for="direct">Direct</label><br>
             
-            <label for="plant[lastWaterDate]">Last Water Date:</label> <br>
-            <input name="plant[lastWaterDate]" type="date" required> <br>
+            <label class="plant-label" for="plant[lastWaterDate]">Last Water Date:</label> <br>
+            <input class="form-input-box" name="plant[lastWaterDate]" type="date" max="2022-04-15" required> <br>
 
             <button type="submit">Add Plant</button> <br>
             </form>
           </div> <!-- end add-plant-display -->
 
           <div id="show-plants-display"></div>
+
           <div id="show-plant-display"></div>
 
           <div id="update-plant-display">
             <h3>Update Plant</h3> <hr>
             <form id="update-plant-form">
 
-            <label for="plant[species]">Plant Species:</label> <br>
-            <input name="plant[species]" type="text" placeholder="Enter your plant" required> <br>
+            <label class="plant-label" for="plant[species]">Plant Species:</label> <br>
+            <input class="form-input-box" name="plant[species]" type="text" placeholder="Enter your plant" required> <br>
 
-            <label for="plant[lightLevel]">Light Level:</label> <br>
+            <label class="plant-label" for="plant[lightLevel]">Light Level:</label> <br>
             <input name="plant[lightLevel]" type="radio" value="low" required> 
-            <label for="low">Low</label><br>
-
+            <label for="low">Low</label>
+            
             <input name="plant[lightLevel]" type="radio" value="indirect"> 
-            <label for="indirect">Indirect</label><br>
+            <label for="indirect">Indirect</label>
 
             <input name="plant[lightLevel]" type="radio" value="direct"> 
             <label for="direct">Direct</label><br>
             
-            <label for="plant[lastWaterDate]">Last Water Date:</label> <br>
-            <input name="plant[lastWaterDate]" type="date" required> <br>
+            <label class="plant-label" for="plant[lastWaterDate]">Last Water Date:</label> <br>
+            <input class="form-input-box" name="plant[lastWaterDate]" type="date" required> <br>
 
             <button type="submit">Update Plant</button> <br>
             </form>
