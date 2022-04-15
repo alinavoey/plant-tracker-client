@@ -4,6 +4,7 @@ const plantUi = require('../plant/ui.js')
 
 const onCreatePlant = function() {
     $('#add-plant-display').show()
+    $('#plant-btns').hide()
 }
 
 const onAddPlant = function(event) {
@@ -35,6 +36,7 @@ const onShowPlant = function(event) {
 
 const onUpdateDisplay = function() {
     $('#update-plant-display').show()
+    $('#show-plant-display').hide()
 }
 
 const onUpdatePlant = function(event) {
@@ -54,6 +56,11 @@ const onDeletePlant = function() {
         .catch(() => plantUi.onDeletePlantFailure())
 }
 
+const onBackToPlants = function() {
+    $('#show-plants-display').show();
+    $('#show-plant-display').hide()
+}
+
 module.exports = {
     onCreatePlant,
     onAddPlant,
@@ -61,5 +68,6 @@ module.exports = {
     onShowPlant,
     onUpdateDisplay,
     onUpdatePlant,
-    onDeletePlant
+    onDeletePlant,
+    onBackToPlants
 }

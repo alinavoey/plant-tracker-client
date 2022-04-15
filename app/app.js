@@ -17,6 +17,7 @@ $(() => {
   $('#create-account-btn').on('click', authEvents.onCreateAccountBtn)
   $('#sign-in-btn').on('click', authEvents.onSignInBtn)
   $('#change-pw-btn').on('click', authEvents.onChangePwBtn)
+  $('#home-btn').on('click', authEvents.onHomeBtn)
 
   // plant event handlers
   $('#plant-btns').on('click', '#create-plant', plantEvents.onCreatePlant)
@@ -26,4 +27,5 @@ $(() => {
   $('#show-plant-display').on('click', '#update-plant-btn', plantEvents.onUpdateDisplay)
   $('#update-plant-form').on('submit', plantEvents.onUpdatePlant)
   $('#show-plant-display').on('click', '#delete-plant-btn', plantEvents.onDeletePlant)
+  $('#show-plant-display').on('click', '#back-btn', plantEvents.onBackToPlants)
 })

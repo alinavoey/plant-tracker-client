@@ -13,6 +13,10 @@ const onAddPlantFailure = function() {
 } 
 
 const onIndexSuccess = function(response) {
+    $('#plant-btns').hide()
+    $('#show-plants-display').show()
+    $('#show-plants-display').html('<h3>My Plants</h3> <hr>')
+
     store.plants = response.plants
 
     const plants = store.plants
@@ -32,6 +36,11 @@ const onIndexFailure = function() {
 }
 
 const onShowPlantSuccess = function(response) {
+    $('#show-plant-display').show()
+    $('#show-plants-display').hide()
+
+    let today = moment()
+
     const daysToWater = {
         low: 10,
         indirect: 7,
@@ -42,16 +51,26 @@ const onShowPlantSuccess = function(response) {
     const plant = store.plant
     let species = plant.species
     let lightLevel = plant.lightLevel
-    let lastWaterDate = moment(plant.lastWaterDate).format('MM-DD-YYYY')
-    let nextWaterDate = moment(plant.lastWaterDate).add(daysToWater[lightLevel], 'days').format('MM-DD-YYYY')
+    let lastWaterDate = moment(plant.lastWaterDate)
+    let nextWaterDate = moment(plant.lastWaterDate).add(daysToWater[lightLevel], 'days')
+
+    let waterMe = ''
+    let diff = nextWaterDate.diff(today, 'days')
+    if (diff < 0) {
+        waterMe = 'You are ' + Math.abs(diff) + ' days late! <br> Please... send help... or water'
+    } else {
+        waterMe = 'Water me in ' + diff + ' days!'
+    }
 
     $('#show-plant-display').html(`
         <h3>${species}</h3>
+        <h4>${waterMe}</h4>
         <p>Light Level: ${lightLevel}</p>
-        <p>Last Watered On: ${lastWaterDate}</p>
-        <p>Next Water Date: ${nextWaterDate}</p>
+        <p>Last Watered On: ${lastWaterDate.format('MM-DD-YYYY')}</p>
+        <p>Next Water Date: ${nextWaterDate.format('MM-DD-YYYY')}</p>
         <button id="update-plant-btn">Update</button>
         <button id="delete-plant-btn">Delete</button>
+        <button id="back-btn">Back</button>
     `)
 
 }
@@ -62,6 +81,7 @@ const onShowPlantFailure = function() {
 
 const onUpdatePlantSuccess = function() {
     $('#plant-display').html('<p>Plant Updated Successfully</p>')
+    $('form').trigger('reset')
 }
 
 const onUpdatePlantFailure = function() {

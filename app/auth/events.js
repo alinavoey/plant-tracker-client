@@ -20,6 +20,14 @@ const onChangePwBtn = function() {
     $('#change-pw-display').show()
 }
 
+const onHomeBtn = function() {
+    $('#plant-btns').show()
+    $('#add-plant-display').hide()
+    $('#show-plants-display').html(' ')
+    $('#show-plant-display').hide()
+    $('#update-plant-display').hide()
+}
+
 const onSignUp = function(event) {
     event.preventDefault()
     const form = event.target
@@ -61,6 +69,7 @@ module.exports = {
     onCreateAccountBtn,
     onSignInBtn,
     onChangePwBtn,
+    onHomeBtn,
     onSignUp,
     onSignIn,
     onChangePw,

@@ -1,4 +1,5 @@
 const store = require('../store.js')
+const moment = require('moment')
 
 const onSignUpSuccess = function() {
     $('#auth-display').html('<p>Sign Up Successful</p>')
@@ -15,15 +16,26 @@ const onSignInSuccess = function(response) {
 
     store.user = response.user
     $('#home-page').hide()
-    $('#home-btn').show()
-    $('#change-pw-btn').show()
-    $('#sign-out-btn').show()
+    $('#main-content').show()
+    $('#navigation').show()
 
     $('#plant-btns').html(`
         <img src="./public/pot-resized.png" width="400" height="400"> <br>
         <button id="create-plant" type="click">Add New Plant</button> <br>
         <button id="view-plants" type="click">My Plants</button> <br>
     `)
+
+    // let d = new Date();
+    // let month = d.getMonth()+1;
+    // let day = d.getDate();
+    // let today = d.getFullYear() + '-' +
+    //     (month<10 ? '0' : '') + month + '-' +
+    //     (day<10 ? '0' : '') + day;
+    // console.log(today)
+    // console.log(typeof(today))
+    let today = moment().format('YYYY-MM-DD')
+    $('input[type="date"]').attr('max', today)
+
 }
 
 const onSignInFailure = function() {
