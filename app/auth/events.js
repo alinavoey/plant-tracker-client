@@ -26,6 +26,7 @@ const onHomeBtn = function() {
     $('#show-plants-display').html(' ')
     $('#show-plant-display').hide()
     $('#update-plant-display').hide()
+    $('#plant-display').hide()
 }
 
 const onSignUp = function(event) {

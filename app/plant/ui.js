@@ -2,6 +2,7 @@ const store = require('../store.js')
 const moment = require('moment')
 
 const onAddPlantSuccess = function(response) {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Plant Added Successfully</p>')
     store.plant = response.plant
 
@@ -9,13 +10,16 @@ const onAddPlantSuccess = function(response) {
 } 
 
 const onAddPlantFailure = function() {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Plant Added Failed</p>')
 } 
 
 const onIndexSuccess = function(response) {
     $('#plant-btns').hide()
+    $('#auth-display').hide()
     $('#show-plants-display').show()
     $('#show-plants-display').html('<h3>My Plants</h3> <hr>')
+    $('#auth-modal-display').html('')
 
     store.plants = response.plants
 
@@ -32,12 +36,14 @@ const onIndexSuccess = function(response) {
 }
 
 const onIndexFailure = function() {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Plant Index Failed</p>')
 }
 
 const onShowPlantSuccess = function(response) {
     $('#show-plant-display').show()
     $('#show-plants-display').hide()
+    $('#auth-modal-display').html('')
 
     let today = moment()
 
@@ -58,41 +64,47 @@ const onShowPlantSuccess = function(response) {
     let diff = nextWaterDate.diff(today, 'days')
     if (diff < 0) {
         waterMe = 'You are ' + Math.abs(diff) + ' days late! <br> Please... send help... or water'
+    } else if (diff == 0) {
+        waterMe = 'Water me today!'
     } else {
         waterMe = 'Water me in ' + diff + ' days!'
     }
 
     $('#show-plant-display').html(`
-        <h3>${species}</h3>
+        <h3>${species}</h3> <hr>
         <h4>${waterMe}</h4>
         <p>Light Level: ${lightLevel}</p>
         <p>Last Watered On: ${lastWaterDate.format('MM-DD-YYYY')}</p>
         <p>Next Water Date: ${nextWaterDate.format('MM-DD-YYYY')}</p>
         <button id="update-plant-btn">Update</button>
         <button id="delete-plant-btn">Delete</button>
-        <button id="back-btn">Back</button>
     `)
 
 }
 
 const onShowPlantFailure = function() {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Show Plant Failed</p>')
 }
 
 const onUpdatePlantSuccess = function() {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Plant Updated Successfully</p>')
     $('form').trigger('reset')
 }
 
 const onUpdatePlantFailure = function() {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Plant Update Failed</p>')
 }
 
 const onDeletePlantSuccess = function() {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Plant Deleted Successfully</p>')
 }
 
 const onDeletePlantFailure = function() {
+    $('#plant-display').show()
     $('#plant-display').html('<p>Plant Delete Failed</p>')
 }
 
