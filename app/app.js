@@ -27,5 +27,4 @@ $(() => {
   $('#show-plant-display').on('click', '#update-plant-btn', plantEvents.onUpdateDisplay)
   $('#update-plant-form').on('submit', plantEvents.onUpdatePlant)
   $('#show-plant-display').on('click', '#delete-plant-btn', plantEvents.onDeletePlant)
-  $('#show-plant-display').on('click', '#back-btn', plantEvents.onBackToPlants)
 })

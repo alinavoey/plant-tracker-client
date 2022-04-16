@@ -45,11 +45,18 @@ body {
     margin-top: 0;
 }
 
+hr {
+    margin: auto;
+    width: 60%;
+    border: 2px solid #70a56e
+
+}
+
 #plant-btns button {
     width: 35%;
-    margin: 10px 0;
+    margin-top: 20px;
     padding: 30px;
-    background-color: #b185db;
+    background-color: #70a56e;
     border: none;
     color: white;
     letter-spacing: 4px;
@@ -57,18 +64,23 @@ body {
 }
 
 #add-plant-display h3, #show-plants-display h3, #show-plant-display h3, #update-plant-display h3 {
-    font-size: 45px;
+    font-size: 30px;
     text-transform: uppercase;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
+    color:rgb(46, 45, 45);
+}
+
+#add-plant-form, #update-plant-form {
+    margin: 10px 0;
 }
 
 #add-plant-form button, #update-plant-form button {
     font-size: 20px;
-    margin: 10px 0;
+    margin: 20px 0;
     width: 40%;
     padding: 20px;
     border: none;
-    background-color: rgba(92, 209, 133, 0.864);
+    background-color: #f08080;
     letter-spacing: 6px;
     text-transform: uppercase;
     color: white;
@@ -76,7 +88,7 @@ body {
 
 .form-input-box {
     text-align: center;
-    width: 40%;
+    width: 30%;
     letter-spacing: 2px;
     padding: 10px;
 }
@@ -84,14 +96,19 @@ body {
 .plant-label {
     font-size: 16px;
     margin-top: 10px;
+    margin-bottom: 5px;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
+#show-plants-display {
+    margin-top: 5%;
+}
+
 #show-plants-display button {
-    margin: 10px 0;
-    width: 50%;
-    padding: 30px;
+    margin-top: 20px;
+    width: 40%;
+    padding: 40px 20px;
     border: none;
     background-color: #f8667a;
     color: white;
@@ -104,6 +121,14 @@ body {
     margin: 5% 0;
     letter-spacing: 2px;
     font-size: 16px;
+}
+
+#show-plant-display h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:#f8667a;
+    margin: 20px 0;
 }
 
 #show-plant-display button {
@@ -126,11 +151,58 @@ body {
 }
 
 #navigation button{
-    border: none;
+    border: 4px solid whitesmoke;
     flex-grow: 1;
     padding: 10px;
-    background-color: #b185db;
-    color: white;
+    background-color: whitesmoke;
+    color: rgb(46, 45, 45);
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+#navigation button:hover {
+    border-bottom: 4px solid #f08080;
+    transition: 0.3s;
+}
+
+#navigation button:focus {
+    box-shadow: none;
+}
+
+#change-pw-form input {
+    width: 50%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    letter-spacing: 2px;
+}
+
+#change-pw-form button {
+    width: 50%;
+    margin: 5px 0;
+    padding: 10px 20px;
+    background-color: #f8667a;
+    border: none;
+}
+
+#home-img {
+    animation-name: cactus;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+// #home-img:hover {
+//     transform: rotate(-45deg);
+//     transition: 0.5s;
+// }
+
+@keyframes cactus {
+    // 0% {transform: rotate(-5deg);}
+    // 100% {transform: rotate(5deg);}
+    0%{transform: translateY(0);} 
+    100% {transform: translateY(0);}
+    50% {transform: translateY(-20px)}
 }

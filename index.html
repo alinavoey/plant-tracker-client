@@ -39,27 +39,46 @@
 
         <button id="create-account-btn">Create Account</button>
         <button id="sign-in-btn">Sign In</button>
+
+        <section id="home-page-auth"></section>
       </div> <!-- end home-page -->
 
 
       <div id="main-content">
 
-        <div id="change-pw-display">
-          <h3>Change Password</h3>
-          <form id="change-pw-form">
-            <input name="passwords[old]" type="password" placeholder="old password" required>
-            <input name="passwords[new]" type="password" placeholder="new password" required> 
-            <button type="submit">Change Password</button> 
-          </form>
-        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <div id="change-pw-display">
+                  <form id="change-pw-form">
+                    <input name="passwords[old]" type="password" placeholder="old password" required> <br>
+                    <input name="passwords[new]" type="password" placeholder="new password" required> <br>
+                    <button type="submit">Change Password</button> <br>
+
+                    <section id="auth-modal-display"></section>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- end modal -->
         
         <div id="navigation">
           <button id="home-btn">Home</button>
-          <button id="change-pw-btn">Change Password</button>
+          <!-- <button id="change-pw-btn">Change Password</button> -->
+          <button type="button" id="change-pw-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Change Password
+          </button>
           <button id="sign-out-btn">Sign Out</button>
         </div>
-
-          <section id="auth-display"></section>
 
           <div id="plant-btns"></div>
 
@@ -116,6 +135,8 @@
           </div> <!-- end update-plant-display -->
 
           <section id="plant-display"></section>
+
+          <section id="auth-display"></section>
 
       </div> <!-- end main-content div -->
     </body>
