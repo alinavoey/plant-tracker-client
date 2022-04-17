@@ -209,15 +209,91 @@ hr {
     animation-direction: alternate;
 }
 
-// #home-img:hover {
-//     transform: rotate(-45deg);
-//     transition: 0.5s;
-// }
-
 @keyframes cactus {
-    // 0% {transform: rotate(-5deg);}
-    // 100% {transform: rotate(5deg);}
     0%{transform: translateY(0);} 
     100% {transform: translateY(0);}
     50% {transform: translateY(-20px)}
+}
+
+@media only screen and (max-width: 400px) {
+    #home-page img {
+        margin-top: 15%;
+        width: 250px;
+        height: 250px;
+    }
+
+    #home-page, #main-content {
+        padding: 5% 0;
+        height: 100%;
+        margin: 12%;
+    }
+
+    #home-page form input, #home-page button {
+        width: 80%;
+    }
+    
+    #navigation button{
+        font-size: 10px;
+        padding: 0 5px
+    }
+
+    #change-pw-form input, #change-pw-form button {
+        width: 80%;
+    }
+
+    #main-content img {
+        margin-top: 10%;
+        width: 250px;
+        height: 250px;
+    }
+    #plant-btns button {
+        width: 80%;
+        padding: 20px 5px;
+    }
+
+    #add-plant-display h3, #show-plants-display h3, #show-plant-display h3, #update-plant-display h3 {
+        font-size: 18px;
+        letter-spacing: 5px;
+        padding: 5px;
+        margin-top: 10%;
+    }
+    
+    #add-plant-form button, #update-plant-form button {
+        font-size: 14px;
+        width: 80%;
+        padding: 10px;
+    }
+    
+    .radio-label{
+        font-size: 12px;
+    }
+    
+    .form-input-box {
+        width: 80%;
+        font-size: 14px;
+        padding: 5px;
+    }
+    
+    .plant-label {
+        font-size: 12px;
+    }
+    
+    #show-plants-display button {
+        width: 80%;
+        padding: 5px;
+        font-size: 16px;
+    }
+    
+    #show-plant-display {
+        font-size: 12px;
+    }
+    
+    #show-plant-display h4 {
+        font-size: 16px;
+    }
+    
+    #show-plant-display button {
+        width: 40%;
+        padding: 5px;
+    }
 }
