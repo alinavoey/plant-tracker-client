@@ -45,7 +45,7 @@ const onShowPlantSuccess = function(response) {
     $('#show-plants-display').hide()
     $('#auth-modal-display').html('')
 
-    let today = moment()
+    let today = moment().set({hour:0,minute:0,second:0,millisecond:0}).utc()
 
     const daysToWater = {
         low: 10,
@@ -57,11 +57,11 @@ const onShowPlantSuccess = function(response) {
     const plant = store.plant
     let species = plant.species
     let lightLevel = plant.lightLevel
-    let lastWaterDate = moment(plant.lastWaterDate)
-    let nextWaterDate = moment(plant.lastWaterDate).add(daysToWater[lightLevel], 'days')
+    let lastWaterDate = moment.utc(plant.lastWaterDate)
+    let nextWaterDate = moment.utc(lastWaterDate).add(daysToWater[lightLevel], 'days')
 
     let waterMe = ''
-    let diff = nextWaterDate.diff(today, 'days')
+    let diff = nextWaterDate.startOf('day').diff(today.startOf('day'), 'days')
     if (diff < 0) {
         waterMe = 'You are ' + Math.abs(diff) + ' days late! <br> Please... send help... or water'
     } else if (diff == 0) {
