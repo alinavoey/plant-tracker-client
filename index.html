@@ -90,17 +90,18 @@
             <input class="form-input-box" name="plant[species]" type="text" placeholder="Enter your plant" required> <br>
 
             <label class="plant-label" for="plant[lightLevel]">Light Level:</label> <br>
-            <input name="plant[lightLevel]" type="radio" value="low" required> 
-            <label for="low">Low</label>
 
-            <input name="plant[lightLevel]" type="radio" value="indirect"> 
-            <label for="indirect">Indirect</label>
+            <input class="radio-btn" name="plant[lightLevel]" type="radio" value="low" required> 
+            <label class="radio-label" for="low">Low</label>
 
-            <input name="plant[lightLevel]" type="radio" value="direct"> 
-            <label for="direct">Direct</label><br>
+            <input class="radio-btn" name="plant[lightLevel]" type="radio" value="indirect"> 
+            <label class="radio-label" for="indirect">Indirect</label>
+
+            <input class="radio-btn" name="plant[lightLevel]" type="radio" value="direct"> 
+            <label class="radio-label" for="direct">Direct</label><br>
             
             <label class="plant-label" for="plant[lastWaterDate]">Last Water Date:</label> <br>
-            <input class="form-input-box" name="plant[lastWaterDate]" type="date" max="2022-04-15" required> <br>
+            <input class="form-input-box" name="plant[lastWaterDate]" type="date" required> <br>
 
             <button type="submit">Add Plant</button> <br>
             </form>
