@@ -222,19 +222,34 @@ hr {
         height: 250px;
     }
 
-    #home-page, #main-content {
+    #home-page{
         padding: 5% 0;
         height: 100%;
-        margin: 12%;
+        margin: 12% 5%;
     }
 
     #home-page form input, #home-page button {
         width: 80%;
     }
+
+    #main-content {
+        height: 100vh;
+        width: inherit;
+        margin: 0;
+        background-color: whitesmoke;
+    }
+
+    #navigation{
+        width: 100%;
+        background-color: #f08080;
+    }
     
     #navigation button{
-        font-size: 10px;
-        padding: 0 5px
+        border: none;
+        font-size: 14px;
+        padding: 14px 5px;
+        background-color: #f08080;
+        color: white;
     }
 
     #change-pw-form input, #change-pw-form button {
