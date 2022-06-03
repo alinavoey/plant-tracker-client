@@ -1,0 +1,314 @@
+@import '~bootstrap/scss/bootstrap';
+
+#change-pw-display, #navigation, #add-plant-display, #update-plant-display, #sign-up-display, #sign-in-btn, #main-content, #show-plant-display {
+    display: none;
+}
+
+body {
+    background-color: #8db38b;
+}
+
+#home-page {
+    padding: 5% 0;
+}
+
+#home-page, #main-content {
+    height: 100vh;
+    margin: 0 23%;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+#home-page h3 {
+    margin: 10px 0;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+#home-page form input {
+    width: 35%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    letter-spacing: 2px;
+}
+
+#home-page button {
+    width: 35%;
+    margin: 5px 0;
+    padding: 10px 30px;
+    background-color: #f8667a;
+    border: none;
+}
+
+#main-content{
+    margin-top: 0;
+}
+
+hr {
+    margin: auto;
+    width: 60%;
+    border: 2px solid #70a56e
+
+}
+
+#plant-btns button {
+    width: 35%;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: #70a56e;
+    border: none;
+    color: white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 450;
+}
+
+#plant-btns button:hover{
+    background-color:#f08080;
+    transition: 0.2s;
+}
+
+#add-plant-display h3, #show-plants-display h3, #show-plant-display h3, #update-plant-display h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color:rgb(46, 45, 45);
+}
+
+#add-plant-form, #update-plant-form {
+    margin: 10px 0;
+}
+
+#add-plant-form button, #update-plant-form button {
+    font-size: 20px;
+    margin: 20px 0;
+    width: 40%;
+    padding: 20px;
+    border: none;
+    background-color: #f08080;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.radio-label{
+    letter-spacing: 2px;
+    margin: 0 10px;
+}
+
+.form-input-box {
+    text-align: center;
+    width: 30%;
+    letter-spacing: 2px;
+    padding: 10px;
+}
+
+.plant-label {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+#show-plants-display {
+    margin-top: 5%;
+}
+
+#show-plants-display button {
+    margin-top: 20px;
+    width: 40%;
+    padding: 40px 20px;
+    border: 4px solid #f8667a;
+    background-color: #f8667a;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 20px;
+}
+
+#show-plants-display button:hover {
+    border: 4px solid whitesmoke;
+}
+
+#show-plant-display {
+    margin: 5% 0;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+#show-plant-display h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:#f8667a;
+    margin: 20px 0;
+}
+
+#show-plant-display button {
+    width: 20%;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: none;
+    background-color: #8db38b;
+    color: white;
+}
+
+#navigation {
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1px;
+    margin-bottom: 5%;
+}
+
+#navigation button{
+    border: 4px solid whitesmoke;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: whitesmoke;
+    color: rgb(46, 45, 45);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#navigation button:hover {
+    border-bottom: 4px solid #f08080;
+    transition: 0.3s;
+}
+
+#navigation button:focus {
+    box-shadow: none;
+}
+
+#change-pw-form input {
+    width: 50%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    letter-spacing: 2px;
+}
+
+#change-pw-form button {
+    width: 50%;
+    margin: 5px 0;
+    padding: 10px 20px;
+    background-color: #f8667a;
+    border: none;
+}
+
+#home-img {
+    animation-name: cactus;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes cactus {
+    0%{transform: translateY(0);} 
+    100% {transform: translateY(0);}
+    50% {transform: translateY(-20px)}
+}
+
+@media only screen and (max-width: 400px) {
+    #home-page img {
+        margin-top: 15%;
+        width: 250px;
+        height: 250px;
+    }
+
+    #home-page{
+        padding: 5% 0;
+        height: 100%;
+        margin: 12% 5%;
+    }
+
+    #home-page form input, #home-page button {
+        width: 80%;
+    }
+
+    #main-content {
+        height: 100vh;
+        width: inherit;
+        margin: 0;
+        background-color: whitesmoke;
+    }
+
+    #navigation{
+        width: 100%;
+        background-color: #f08080;
+    }
+    
+    #navigation button{
+        border: none;
+        font-size: 14px;
+        padding: 14px 5px;
+        background-color: #f08080;
+        color: white;
+    }
+
+    #change-pw-form input, #change-pw-form button {
+        width: 80%;
+    }
+
+    #main-content img {
+        margin-top: 10%;
+        width: 250px;
+        height: 250px;
+    }
+    #plant-btns button {
+        width: 80%;
+        padding: 20px 5px;
+    }
+
+    #add-plant-display h3, #show-plants-display h3, #show-plant-display h3, #update-plant-display h3 {
+        font-size: 18px;
+        letter-spacing: 5px;
+        padding: 5px;
+        margin-top: 10%;
+    }
+    
+    #add-plant-form button, #update-plant-form button {
+        font-size: 14px;
+        width: 80%;
+        padding: 10px;
+    }
+    
+    .radio-label{
+        font-size: 12px;
+    }
+    
+    .form-input-box {
+        width: 80%;
+        font-size: 14px;
+        padding: 5px;
+    }
+    
+    .plant-label {
+        font-size: 12px;
+    }
+    
+    #show-plants-display button {
+        width: 80%;
+        padding: 5px;
+        font-size: 16px;
+    }
+    
+    #show-plant-display {
+        font-size: 12px;
+    }
+    
+    #show-plant-display h4 {
+        font-size: 16px;
+    }
+    
+    #show-plant-display button {
+        width: 40%;
+        padding: 5px;
+    }
+}

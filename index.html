@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Plant Watering Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      
+      <div id="home-page">
+
+        <img src="./public/plant-resized.png" width="400" height="400">
+
+        <div id="sign-up-display">
+        <h3>Sign Up</h3>
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="email" placeholder="Enter your email" required> <br>
+            <input name="credentials[password]" type="password" placeholder="Enter a password" required> <br>
+            <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required> <br>
+            <button type="submit">Sign Up</button> <br>
+          </form>
+        </div>
+
+        <div id="sign-in-display">
+        <h3>Sign In</h3>
+          <form id="sign-in-form">
+            <input name="credentials[email]" type="email" placeholder="email" required> <br>
+            <input name="credentials[password]" type="password" placeholder="password" required> <br>
+            <button type="submit">Sign In</button> <br>
+          </form>
+        </div>
+
+        <button id="create-account-btn">Create Account</button>
+        <button id="sign-in-btn">Sign In</button>
+
+        <section id="home-page-auth"></section>
+      </div> <!-- end home-page -->
+
+
+      <div id="main-content">
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <div id="change-pw-display">
+                  <form id="change-pw-form">
+                    <input name="passwords[old]" type="password" placeholder="old password" required> <br>
+                    <input name="passwords[new]" type="password" placeholder="new password" required> <br>
+                    <button type="submit">Change Password</button> <br>
+
+                    <section id="auth-modal-display"></section>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- end modal -->
+        
+        <div id="navigation">
+          <button id="home-btn">Home</button>
+          <!-- <button id="change-pw-btn">Change Password</button> -->
+          <button type="button" id="change-pw-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Change Password
+          </button>
+          <button id="sign-out-btn">Sign Out</button>
+        </div>
+
+          <div id="plant-btns"></div>
+
+          <div id="add-plant-display">
+            <h3>Add New Plant</h3> <hr>
+            <form id="add-plant-form">
+
+            <label class="plant-label" for="plant[species]">Plant Species:</label> <br>
+            <input class="form-input-box" name="plant[species]" type="text" placeholder="Enter your plant" required> <br>
+
+            <label class="plant-label" for="plant[lightLevel]">Light Level:</label> <br>
+
+            <input class="radio-btn" name="plant[lightLevel]" type="radio" value="low" required> 
+            <label class="radio-label" for="low">Low</label>
+
+            <input class="radio-btn" name="plant[lightLevel]" type="radio" value="indirect"> 
+            <label class="radio-label" for="indirect">Indirect</label>
+
+            <input class="radio-btn" name="plant[lightLevel]" type="radio" value="direct"> 
+            <label class="radio-label" for="direct">Direct</label><br>
+            
+            <label class="plant-label" for="plant[lastWaterDate]">Last Water Date:</label> <br>
+            <input class="form-input-box" name="plant[lastWaterDate]" type="date" required> <br>
+
+            <button type="submit">Add Plant</button> <br>
+            </form>
+          </div> <!-- end add-plant-display -->
+
+          <div id="show-plants-display"></div>
+
+          <div id="show-plant-display"></div>
+
+          <div id="update-plant-display">
+            <h3>Update Plant</h3> <hr>
+            <form id="update-plant-form">
+
+            <label class="plant-label" for="plant[species]">Plant Species:</label> <br>
+            <input class="form-input-box" name="plant[species]" type="text" placeholder="Enter your plant" required> <br>
+
+            <label class="plant-label" for="plant[lightLevel]">Light Level:</label> <br>
+            <input name="plant[lightLevel]" type="radio" value="low" required> 
+            <label for="low">Low</label>
+            
+            <input name="plant[lightLevel]" type="radio" value="indirect"> 
+            <label for="indirect">Indirect</label>
+
+            <input name="plant[lightLevel]" type="radio" value="direct"> 
+            <label for="direct">Direct</label><br>
+            
+            <label class="plant-label" for="plant[lastWaterDate]">Last Water Date:</label> <br>
+            <input class="form-input-box" name="plant[lastWaterDate]" type="date" required> <br>
+
+            <button type="submit">Update Plant</button> <br>
+            </form>
+          </div> <!-- end update-plant-display -->
+
+          <section id="plant-display"></section>
+
+          <section id="auth-display"></section>
+
+      </div> <!-- end main-content div -->
+    </body>
+</html>
